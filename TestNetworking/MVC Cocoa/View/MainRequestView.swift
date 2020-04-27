@@ -11,13 +11,14 @@ import UIKit
 
 class MainRequestView: UIView {
     
-    var controller: MainRequestController!
+    private var controller: MainRequestController!
     
     private weak var collectionView: UICollectionView!
     private let reuseIdentifier = "requestCell"
     
     init() {
         super.init(frame: .zero)
+//        backgroundColor = .yellow
         customLayout()
     }
     
@@ -29,22 +30,54 @@ class MainRequestView: UIView {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         collectionView.register(RequestCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
+        collectionView.delegate = self
+        collectionView.dataSource = self
         self.collectionView = collectionView
+        collectionView.backgroundColor = .white
+        
         addSubview(self.collectionView)
         
+        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
     
 }
 
-extension MainRequestView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MainRequestView: InterfaceMainRequestView {
+    var output: MainRequestController {
+        get {
+            return controller
+        }
+        set {
+            controller = newValue
+        }
+    }
+    
+}
+
+extension MainRequestView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return controller.numberOfItemInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RequestCollectionViewCell
-        
+        cell.viewModel = controller.viewModelForItemAt(indexPath)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: self.frame.width - 40, height: 70)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
 }

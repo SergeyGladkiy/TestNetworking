@@ -16,6 +16,10 @@
 		82E9866224558D700093C7EC /* MainRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9866124558D700093C7EC /* MainRequestController.swift */; };
 		82E9866624559F960093C7EC /* MainRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9866524559F960093C7EC /* MainRequestView.swift */; };
 		82E986692455ABCD0093C7EC /* RequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E986682455ABCD0093C7EC /* RequestCollectionViewCell.swift */; };
+		82E9866C2455BC6D0093C7EC /* DataRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9866B2455BC6D0093C7EC /* DataRequests.swift */; };
+		82E9866F2455BF660093C7EC /* InterfaceMainRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9866E2455BF660093C7EC /* InterfaceMainRequestView.swift */; };
+		82E986712455BF820093C7EC /* ViewModelMainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E986702455BF820093C7EC /* ViewModelMainRequest.swift */; };
+		82E986732455CD3D0093C7EC /* ModelMainRequestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E986722455CD3D0093C7EC /* ModelMainRequestViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		82E9866124558D700093C7EC /* MainRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainRequestController.swift; path = ../MainRequestController.swift; sourceTree = "<group>"; };
 		82E9866524559F960093C7EC /* MainRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRequestView.swift; sourceTree = "<group>"; };
 		82E986682455ABCD0093C7EC /* RequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCollectionViewCell.swift; sourceTree = "<group>"; };
+		82E9866B2455BC6D0093C7EC /* DataRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequests.swift; sourceTree = "<group>"; };
+		82E9866E2455BF660093C7EC /* InterfaceMainRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceMainRequestView.swift; sourceTree = "<group>"; };
+		82E986702455BF820093C7EC /* ViewModelMainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelMainRequest.swift; sourceTree = "<group>"; };
+		82E986722455CD3D0093C7EC /* ModelMainRequestViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMainRequestViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 		82E9866324558D760093C7EC /* MVC Cocoa */ = {
 			isa = PBXGroup;
 			children = (
+				82E9866A2455BC530093C7EC /* Model */,
 				82E9866724559FA00093C7EC /* View */,
 				82E9866424559F670093C7EC /* Controller */,
 			);
@@ -102,10 +111,37 @@
 		82E9866724559FA00093C7EC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				82E9866D2455BF340093C7EC /* Protocols */,
 				82E9866524559F960093C7EC /* MainRequestView.swift */,
-				82E986682455ABCD0093C7EC /* RequestCollectionViewCell.swift */,
+				82E986742456D9B70093C7EC /* Cell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		82E9866A2455BC530093C7EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82E9866B2455BC6D0093C7EC /* DataRequests.swift */,
+				82E986722455CD3D0093C7EC /* ModelMainRequestViewCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82E9866D2455BF340093C7EC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				82E9866E2455BF660093C7EC /* InterfaceMainRequestView.swift */,
+				82E986702455BF820093C7EC /* ViewModelMainRequest.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		82E986742456D9B70093C7EC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				82E986682455ABCD0093C7EC /* RequestCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,10 +217,14 @@
 				82E986692455ABCD0093C7EC /* RequestCollectionViewCell.swift in Sources */,
 				82E9865F245445980093C7EC /* RequestView.swift in Sources */,
 				82E9866624559F960093C7EC /* MainRequestView.swift in Sources */,
+				82E9866F2455BF660093C7EC /* InterfaceMainRequestView.swift in Sources */,
+				82E9866C2455BC6D0093C7EC /* DataRequests.swift in Sources */,
 				82E9865D245444C20093C7EC /* RequestController.swift in Sources */,
 				82E98649245436DF0093C7EC /* AppDelegate.swift in Sources */,
 				82E9864B245436DF0093C7EC /* SceneDelegate.swift in Sources */,
 				82E9866224558D700093C7EC /* MainRequestController.swift in Sources */,
+				82E986732455CD3D0093C7EC /* ModelMainRequestViewCell.swift in Sources */,
+				82E986712455BF820093C7EC /* ViewModelMainRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,13 @@ import UIKit
 
 class RequestCollectionViewCell: UICollectionViewCell {
     
-    weak var actionLabel: UILabel!
+    weak var viewModel: ViewModelMainRequest! {
+        didSet {
+            self.actionLabel.text = viewModel.description
+        }
+    }
+    
+    private weak var actionLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,18 +30,17 @@ class RequestCollectionViewCell: UICollectionViewCell {
     
     private func setLayout() {
         backgroundColor = .lightGray
+        layer.cornerRadius = 10
         
         let label = UILabel()
         label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 17)
+        label.font = .boldSystemFont(ofSize: 25)
         self.actionLabel = label
-        
         let stackView = UIStackView(arrangedSubviews: [actionLabel])
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
         stackView.alignment = .center
         
-        //maybe autorisizing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
         
         NSLayoutConstraint.activate([
