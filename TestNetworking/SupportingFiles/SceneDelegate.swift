@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         let view: InterfaceMainRequestView = MainRequestView()
-        let controller = MainRequestController(view: view)
+        let backgroundDataProvider = BackgroundDataProvider()
+        let controller = MainRequestController(view: view, dataProvider: backgroundDataProvider)
 
 //        let view = Child()
 //        let controller = RequestController(view: view)

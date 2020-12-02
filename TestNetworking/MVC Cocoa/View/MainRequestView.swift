@@ -50,6 +50,7 @@ class MainRequestView: UIView {
 }
 
 extension MainRequestView: InterfaceMainRequestView {
+    
     var output: MainRequestController {
         get {
             return controller
@@ -62,6 +63,7 @@ extension MainRequestView: InterfaceMainRequestView {
 }
 
 extension MainRequestView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return controller.numberOfItemInSection()
     }
@@ -72,12 +74,16 @@ extension MainRequestView: UICollectionViewDelegate, UICollectionViewDataSource,
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        controller.performAction(by: indexPath)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: self.frame.width - 40, height: 70)
+        return .init(width: frame.width - 40, height: 70)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 20, left: 20, bottom: 20, right: 20)
+        return .init(top: 20, left: 0, bottom: 20, right: 0)
     }
     
 }

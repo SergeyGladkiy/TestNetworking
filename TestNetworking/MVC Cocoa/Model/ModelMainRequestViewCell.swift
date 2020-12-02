@@ -15,7 +15,7 @@ class ModelMainRequestViewCell: ViewModelMainRequest {
         return actionName
     }
     
-    init(item: DataRequests) {
-        self.actionName = item.rawValue
+    init(item: TypeRequest) {
+        self.actionName = item.rawValue.uppercased()
     }
 }

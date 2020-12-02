@@ -1,0 +1,6 @@
+{
+	"get": "https://jsonplaceholder.typicode.com/posts",
+    "post": "https://jsonplaceholder.typicode.com/posts",
+    "uploadImage": "https://api.imgur.com/3/upload",
+    "backgroundDownload": "https://i.imgur.com/5aJHy7i.jpg"
+}

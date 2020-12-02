@@ -17,6 +17,23 @@ class RequestCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            //backgroundColor = isHighlighted ? .white : .lightGray
+            var alpha: CGFloat = 1
+            
+            if isHighlighted {
+                alpha = 0.7
+            }
+                
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                
+                self.alpha = alpha
+                
+            }, completion: nil)
+        }
+    }
+    
     private weak var actionLabel: UILabel!
     
     override init(frame: CGRect) {

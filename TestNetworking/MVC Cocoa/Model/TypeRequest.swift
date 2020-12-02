@@ -8,7 +8,9 @@
 
 import Foundation
 
-enum DataRequests: String, CaseIterable {
-    case get = "GET method"
-    case post = "POST method"
+enum TypeRequest: String, CaseIterable {
+    case get
+    case post
+    case uploadImage
+    case backgroundDownload
 }
