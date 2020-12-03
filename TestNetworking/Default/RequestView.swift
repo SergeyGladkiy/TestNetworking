@@ -13,9 +13,10 @@ class RequestView: UICollectionView {
     
     private weak var controllerOutput: InterfaceRequestController!
     
-    private let cellId = "requestCell"
+    private let cellId = "requestCell" 
     
     init() {
+        //SOME CHANGE
         let layout = UICollectionViewFlowLayout()
         super.init(frame: .zero, collectionViewLayout: layout)
         backgroundColor = .green
