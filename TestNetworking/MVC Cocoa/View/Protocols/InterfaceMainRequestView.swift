@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+   
 protocol InterfaceMainRequestView: class {
     var output: MainRequestController { get set }
 }
