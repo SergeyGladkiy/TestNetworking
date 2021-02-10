@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class MainRequestView: UIView {
-    
+      
     private var controller: MainRequestController!
     
     private weak var collectionView: UICollectionView!
